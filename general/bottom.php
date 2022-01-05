@@ -8,7 +8,7 @@
       <div class="d-flex align-items-center mt-1 mb-0">
          <div class="dropdown">
             <button class="btn btn-theme btn-sm mr-2 mb-0" type="button" id="locale-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="far fa-globe mr-2"></i> <i class="far fa-chevron-up"></i>
+			<i class="far fa-globe mr-2"></i> <i class="far fa-chevron-up"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="locale-dropdown">
                <a class="dropdown-item locale-change-link active" href="#" data-locale="en">English (US)</a>
@@ -24,3 +24,7 @@
       </div>
    </div>
 </div>
+<script src="<?php echo $baseUrl; ?>/general/js/js1.js" type="text/javascript"></script>
+<script src="<?php echo $baseUrl; ?>/general/js/js2.js" type="text/javascript"></script>
+<script src="<?php echo $baseUrl; ?>/general/js/js3.js" type="text/javascript"></script>
+<script src="<?php echo $baseUrl; ?>/general/js/js4.js" type="text/javascript"></script>

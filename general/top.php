@@ -6,8 +6,10 @@ $ProjectName = "Finobe";
 $DiscordJoin = "https://discord.gg/yourmom";
 $Twitter = "https://twitter.com/yourmom";
 echo "<title>". $ProjectName ."</title>
-<link rel='stylesheet' href='". $baseUrl ."/css/app.css'>
-<link rel='stylesheet' href='https://use.typekit.net/bzr7dxi.css'>";
+<link rel='stylesheet' href='". $baseUrl ."/general/css/app.php'>
+<link rel='stylesheet' href='". $baseUrl ."/general/css/usetypekit.css'>
+<script src='". $baseUrl ."/general/js/sitejs.js' type='text/javascript'></script>
+<script src='". $baseUrl ."/general/js/sitejs2.js' type='text/javascript'></script>";
 //embed!!!!
 echo "
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
