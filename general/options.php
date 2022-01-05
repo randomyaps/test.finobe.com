@@ -5,15 +5,15 @@ if (isset($_COOKIE['finobetoken'])) {
 	$FinobeToken = null;
 }
 
-$generaldb = mysqli_connect('localhost', 'root', 'yourmom', 'finobe') or header('location: http://' . $_SERVER['SERVER_NAME'] . '/error.php?err=500');
+$generaldb = mysqli_connect('localhost', 'root', 'yourmom', 'finobe') or header('location: http://' . $_SERVER['SERVER_NAME'] . '/error.php?err=404');
 
-$infofetch = $generaldb->prepare("SELECT dius, banned, bannedreason, warn, username, admin, id FROM users WHERE fbtoken = ?");
+$infofetch = $generaldb->prepare("SELECT dius, banned, bannedreason, warn, username, role, id FROM users WHERE fbtoken = ?");
 $infofetch->bind_param("s", $FinobeToken);
 $infofetch->execute();
-$infofetch->bind_result($dius, $banned, $reason, $warn, $username, $admin, $id);
+$infofetch->bind_result($dius, $banned, $reason, $warn, $username, $role, $id);
 $infofetch->fetch();
 
-if ($admin == "authorized"){
+if ($role == "admin"){
 	//AYOOOO ADMIN PANEL?????
 	//FBOKTA?????? REAL??????????????
 	$headeradminpanel = "<li class='nav-item'><a href='". $baseUrl ."/app/okta/admin' class='nav-link'>Admin</a></li>";
@@ -67,7 +67,7 @@ if ($FinobeToken !== null){
 	   </div>
 	</nav>";
 		if(isset($_COOKIE['loginbanner'])){
-			unset($_COOKIE['loginbanner']);
+			setcookie("loginbanner", "", time() - 3600, "/", $baseUrl, 1);
 			echo "<div class='alert alert-danger text-center'>Logged in successfully.</div>";
 		}
 		
