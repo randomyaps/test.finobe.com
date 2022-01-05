@@ -13,14 +13,12 @@
          </div>
       </div>
       <div class="container mt-4">
-      </div>
-      <div class="container mt-4">
          <div class="row">
             <div class="col-sm-6 mb-2">
                <a href="<?php echo $DiscordJoin; ?>" class="catalog-card">
                   <div class="card">
                      <div class="card-body">
-                        <h3><i class="fab fa-fw fa-discord"></i> Discord</h3>
+                        <h3><img style="max-width:30px;max-height:30px" class="img-inline align-middle mr-1" src="<?php echo $baseUrl; ?>/imgs/discordsvg.svg"> Discord</h3>
                         <p class="text-muted mb-0">Join our Discord server and talk to people in our community!</p>
                      </div>
                   </div>
@@ -30,7 +28,7 @@
                <a href="<?php echo $Twitter; ?>" class="catalog-card">
                   <div class="card">
                      <div class="card-body">
-                        <h3><i class="fab fa-fw fa-twitter"></i> Twitter</h3>
+                        <h3><img style="max-width:30px;max-height:30px" class="img-inline align-middle mr-1" src="<?php echo $baseUrl; ?>/imgs/twittersvg.svg"> Twitter</h3>
                         <p class="text-muted mb-0">We tweet whenever we post a video, and may even hint at some upcoming events on our Twitter.</p>
                      </div>
                   </div>
@@ -44,4 +42,3 @@
    <script src="<?php echo $baseUrl; ?>/js/app.js"></script>
    </body>
 </html>
-
