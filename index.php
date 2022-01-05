@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+<body class="finobe-light">
    <?php include($_SERVER['DOCUMENT_ROOT'] . '/general/top.php');?>
    <div id="app">
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/general/options.php');?>
@@ -40,5 +41,6 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/general/bottom.php'); ?>
    <script src="<?php echo $baseUrl; ?>/js/vendor.js"></script>
    <script src="<?php echo $baseUrl; ?>/js/app.js"></script>
-   </body>
+ </body>
 </html>
+
