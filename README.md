@@ -1,3 +1,3 @@
 # sitetest1.finobe.com
 rewrite of finobe.com in php.
-currently on progress
+currently on WIP
