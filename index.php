@@ -39,8 +39,6 @@
       </div>
    </div>
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/general/bottom.php'); ?>
-   <script src="<?php echo $baseUrl; ?>/js/vendor.js"></script>
-   <script src="<?php echo $baseUrl; ?>/js/app.js"></script>
  </body>
 </html>
 
