@@ -8,6 +8,8 @@ $Twitter = "https://twitter.com/yourmom";
 echo "<title>". $ProjectName ."</title>
 <link rel='stylesheet' href='". $baseUrl ."/general/css/app.php'>
 <link rel='stylesheet' href='". $baseUrl ."/general/css/usetypekit.css'>
+<link rel='stylesheet' href='". $baseUrl ."/general/css/fontawesome-pro-v5.10.1/css/all.css'>
+<link rel='stylesheet' href='". $baseUrl ."/general/css/spacing.css'>
 <script src='". $baseUrl ."/general/js/sitejs.js' type='text/javascript'></script>
 <script src='". $baseUrl ."/general/js/sitejs2.js' type='text/javascript'></script>";
 //embed!!!!

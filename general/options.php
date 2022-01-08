@@ -8,7 +8,7 @@ if (isset($_COOKIE['finobetoken'])) {
 $generaldb = mysqli_connect('localhost', 'root', 'yourmom', 'finobe') or header('location: http://' . $_SERVER['SERVER_NAME'] . '/error.php?err=500');
 
 if ($FinobeToken !== null) {
-$infofetch = $generaldb->prepare("SELECT dius, banned, bannedreason, warn, username, role, id FROM users WHERE fbtoken = ?");
+$infofetch = $generaldb->prepare("SELECT dius, banned, bannedreason, warn, username, role, id FROM users WHERE finobetoken = ?");
 $infofetch->bind_param("s", $FinobeToken);
 $infofetch->execute();
 $infofetch->bind_result($dius, $banned, $reason, $warn, $username, $role, $id);
@@ -68,7 +68,7 @@ if ($FinobeToken !== null){
 					  Messages																	</a> <a href='". $baseUrl ."/app/friends.php' class='dropdown-item'>Friends</a>
 				   </div>
 				</li>
-				<li data-animation='false' data-toggle='tooltip' data-placement='bottom' title='' class='nav-item nav-link n-money-text' data-original-title='". $dius ." Dius'><a><img src='imgs/dius.svg' alt='Dius' title='Dius' class='img-responsive align-middle' width='20' height='20'> ". $dius ."</a></li>
+				<li data-animation='false' data-toggle='tooltip' data-placement='bottom' title='' class='nav-item nav-link n-money-text' data-original-title='". $dius ." Dius'><a><img src='imgs/diu_16.png' alt='Dius' title='Dius' class='img-responsive align-middle' width='20' height='20'> ". $dius ."</a></li>
 				<li class='nav-item dropdown'>
 				   <a href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' class='nav-link dropdown-toggle'><i aria-hidden='true' class='far align-middle fa-user mr-1'></i> ". $username ." <span class='caret'></span></a> 
 				   <div class='navbar-nobelium-dropdown dropdown-menu dropdown-menu-right'><a href='". $baseUrl ."/create.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-plus align-middle mr-1'></i> Create</a> <a href='". $baseUrl ."/character.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-user align-middle mr-1'></i> Character</a> <a href='". $baseUrl ."/app/settings.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-wrench align-middle mr-1'></i> Settings</a> <a href='". $baseUrl ."/app/logout.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-sign-out-alt align-middle mr-1'></i> Logout</a></div>
@@ -76,13 +76,16 @@ if ($FinobeToken !== null){
 			 </ul>
 		  </div>
 	   </div>
-	</nav>";
-		if(isset($_COOKIE['loginbanner'])){
-			setcookie("loginbanner", "", time() - 3600, "/", $baseUrl, 1);
-			echo "<div class='alert alert-danger text-center'>Logged in successfully.</div>";
-		}
-		
-	//separating these two cause it might cause confusion for Php Developers that are looking at code
+	</nav>
+	<div class='nav-scroller navbar-dark bg-dark mb-3'>
+   <div class='container'>
+      <nav class='nav nav-underline nav-scroller-inner'>
+         <a class='nav-link' href='". $baseUrl ."/create'><i class='far align-middle fa-fw fa-plus mr-1'></i> Create</a>
+         <a class='nav-link' href='". $baseUrl ."/app/character'><i class='far align-middle fa-fw fa-user mr-1'></i> Avatar</a>
+         <a class='nav-link' href='". $baseUrl ."/trades'><i class='far fa-fw align-middle fa-exchange-alt mr-1'></i> Trades</a>													</a>
+      </nav>
+   </div>
+</div>";
 	}else{
 		//id check is needed, because What if people break Site by putting Random Finobe Token
 		die('Token Error. <a href="'. $baseUrl .'/app/logout">Logout</a> and login again.');
