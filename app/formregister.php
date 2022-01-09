@@ -1,5 +1,12 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/app/appscripting/ServerHandling.php');?>
 <!DOCTYPE HTML>
+<?php
+if (isset($_COOKIE['finobetoken'])) {
+	//oh shit our user is attempting to access a page that they are only supposed to see when they are not logged in!!!!
+	header('Location: '. $baseUrl .'/index.php');
+	die();
+}
+?>
 <html>
 <body class="finobe-light">
    <?php include($_SERVER['DOCUMENT_ROOT'] . '/general/top.php');?>
