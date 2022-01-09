@@ -51,9 +51,6 @@ $letters = strlen($username);
     if (preg_match('/^[a-z0-9_]+$/i', $username) == 0) {
     array_push($errors, "Your username cannot have invalid characters.");
     }
-	if (preg_match('/^[a-z0-9_]+$/i', $email_2) == 0) {
-    array_push($errors, "Your email cannot have invalid characters.");
-    }
 	if (preg_match('/^[a-z_]+$/i', $password_2) == 0) {
     array_push($errors, "Password cannot have invalid characters.");
     }
