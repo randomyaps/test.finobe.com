@@ -31,7 +31,8 @@ $email = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POS
 $email_2 = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POST['email_confirmation']));
 $password = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POST['password']));
 $password_2 = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POST['password_confirmation']));
-$letters = strlen($username);
+$usrletter = strlen($username);
+$pswletter = strlen($password_2);
 
 	if (empty($username)) {
 		array_push($errors, "You cannot have a empty username!");
@@ -51,13 +52,16 @@ $letters = strlen($username);
     if (preg_match('/^[a-z0-9_]+$/i', $username) == 0) {
     array_push($errors, "Your username cannot have invalid characters.");
     }
-	if (preg_match('/^[a-z_]+$/i', $password_2) == 0) {
+    if (preg_match('/^[a-z_]+$/i', $password_2) == 0) {
     array_push($errors, "Password cannot have invalid characters.");
     }
 	
-	if ($letters > "16") {
-	array_push($errors, "You cannot use more than 16 characters.");
-	}
+    if ($usrletter > "16") {
+	    array_push($errors, "You cannot use more than 16 characters.");
+    }
+    if ($pswletter < "6") {
+	    array_push($errors, "Your password needs to be longer than 6 characters!");
+    }
 	
 	$DoesUserExist = $DatabaseExtranetConnection->prepare("SELECT * FROM users WHERE username=?");
 	$DoesUserExist->bind_param("s", $username);
