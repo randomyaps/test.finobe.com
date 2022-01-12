@@ -1,6 +1,10 @@
 <?php
 session_start();
-$baseUrl = "http://". $_SERVER['SERVER_NAME'] ."";
+//wtf????
+//i was probably having a headache when i coded this
+//because most of the redirects used a separate thingy and not the baseurl variable
+//that i had set here before i made loadvls.php
+//wtffffffff
 $username = "";
 $blurb = "Hi!";
 $dius = "10";
@@ -8,7 +12,7 @@ $date = date("Y-m-d");
 $fbtokenregister = "";
 $fbtokenlogin = "";
 $errors = array();
-$DatabaseExtranetConnection = mysqli_connect('localhost', 'root', 'yourmom', 'finobe') or header('location: http://' . $_SERVER['SERVER_NAME'] . '/error.php?err=500');
+$DatabaseExtranetConnection = mysqli_connect($hostdb, $accdb, $passdb, $namedb) or header('Location: ' . $baseUrl . '/err.php?err=500');
 
 function random_tkn(
     int $length = 64,
@@ -31,8 +35,7 @@ $email = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POS
 $email_2 = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POST['email_confirmation']));
 $password = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POST['password']));
 $password_2 = mysqli_real_escape_string($DatabaseExtranetConnection, strip_tags($_POST['password_confirmation']));
-$usrletter = strlen($username);
-$pswletter = strlen($password_2);
+$letters = strlen($username);
 
 	if (empty($username)) {
 		array_push($errors, "You cannot have a empty username!");
@@ -52,16 +55,13 @@ $pswletter = strlen($password_2);
     if (preg_match('/^[a-z0-9_]+$/i', $username) == 0) {
     array_push($errors, "Your username cannot have invalid characters.");
     }
-    if (preg_match('/^[a-z_]+$/i', $password_2) == 0) {
+	if (preg_match('/^[a-z_]+$/i', $password_2) == 0) {
     array_push($errors, "Password cannot have invalid characters.");
     }
 	
-    if ($usrletter > "16") {
-	    array_push($errors, "You cannot use more than 16 characters.");
-    }
-    if ($pswletter < "6") {
-	    array_push($errors, "Your password needs to be longer than 6 characters!");
-    }
+	if ($letters > "16") {
+	array_push($errors, "You cannot use more than 16 characters.");
+	}
 	
 	$DoesUserExist = $DatabaseExtranetConnection->prepare("SELECT * FROM users WHERE username=?");
 	$DoesUserExist->bind_param("s", $username);
@@ -89,7 +89,7 @@ $pswletter = strlen($password_2);
 		$ActuallyRegisterUser->execute();
 		setcookie("finobetoken", $fbtokenregister, time()+9900, "/", $_SERVER['SERVER_NAME']);
 		$_SESSION['loginbanner'] = "1";
-		header('location: http://' . $_SERVER['SERVER_NAME'] . '/index.php');
+		header('Location: ' . $baseUrl . '/index.php');
 	}
 }
 
@@ -124,7 +124,7 @@ if (isset($_POST['loginbtn'])) {
 			if (!empty($rpassword)){
 				if(password_verify($password,$rpassword)){
 						setcookie("finobetoken", $fbtokenlogin, time()+9900, "/", $_SERVER['SERVER_NAME']);
-						header('Location: http://' . $_SERVER['SERVER_NAME'] . '/index.php');
+						header('Location: ' . $baseUrl . '/index.php');
 					}else{
 						array_push($errors, "Your password isnt right!");
 					}
