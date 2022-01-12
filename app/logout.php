@@ -1,5 +1,5 @@
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/general/loadvls.php'); ?>
 <?php
-$baseUrl = "http://". $_SERVER['SERVER_NAME'] ."";
 session_start();
 if (isset($_COOKIE['finobetoken'])) {
 	session_destroy();

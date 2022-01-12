@@ -1,3 +1,4 @@
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/general/loadvls.php'); ?>
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/app/appscripting/ServerHandling.php');?>
 <!DOCTYPE HTML>
 <?php
