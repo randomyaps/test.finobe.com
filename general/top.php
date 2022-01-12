@@ -1,14 +1,13 @@
 <?php
-//hi!!!
-//we set variables here because this loads at the first Moment that Page is loaded!!!!!!!!!
-$baseUrl = "http://". $_SERVER['SERVER_NAME'] ."";
-$ProjectName = "Finobe";
-$DiscordJoin = "https://discord.gg/yourmom";
-$Twitter = "https://twitter.com/yourmom";
+//hi there, variables have been moved over to loadvls.php!!!
+//quick faq: why? because people told me that editing ServerHandling.php is annoying
 echo "<title>". $ProjectName ."</title>
 <link rel='stylesheet' href='". $baseUrl ."/general/css/app.php'>
 <link rel='stylesheet' href='". $baseUrl ."/general/css/usetypekit.css'>
-<link rel='stylesheet' href='". $baseUrl ."/general/css/fontawesome-pro-v5.10.1/css/all.css'>";
+<link rel='stylesheet' href='". $baseUrl ."/general/css/fontawesome-pro-v5.10.1/css/all.css'>
+<link rel='stylesheet' href='". $baseUrl ."/general/css/spacing.css'>
+<script src='". $baseUrl ."/general/js/sitejs.js' type='text/javascript'></script>
+<script src='". $baseUrl ."/general/js/sitejs2.js' type='text/javascript'></script>";
 //embed!!!!
 echo "
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>

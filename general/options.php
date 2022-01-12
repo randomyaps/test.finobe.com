@@ -5,7 +5,7 @@ if (isset($_COOKIE['finobetoken'])) {
 	$FinobeToken = null;
 }
 
-$generaldb = mysqli_connect('localhost', 'root', 'yourmom', 'finobe') or header('location: http://' . $_SERVER['SERVER_NAME'] . '/error.php?err=500');
+$generaldb = mysqli_connect($hostdb, $accdb, $passdb, $namedb) or header('location: http://' . $_SERVER['SERVER_NAME'] . '/err.php?err=500');
 
 if ($FinobeToken !== null) {
 $infofetch = $generaldb->prepare("SELECT dius, banned, bannedreason, warn, username, role, id FROM users WHERE finobetoken = ?");
@@ -77,7 +77,7 @@ if ($FinobeToken !== null){
 		  </div>
 	   </div>
 	</nav>
-	<div class='nav-scroller navbar-dark bg-dark mb-3'>
+	<div class='nav-scroller navbar-light bg-faded mb-3'>
    <div class='container'>
       <nav class='nav nav-underline nav-scroller-inner'>
          <a class='nav-link' href='". $baseUrl ."/create'><i class='far align-middle fa-fw fa-plus mr-1'></i> Create</a>
