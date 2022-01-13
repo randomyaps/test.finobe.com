@@ -23,4 +23,16 @@ CREATE TABLE `users` (
   `finobetoken` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
-And now just copy and paste the src to your htdocs folder.
+click on Go, and then do the same for the code below:
+```
+CREATE TABLE `games` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `title` varchar(100) NOT NULL,
+  `by` varchar(100) NOT NULL,
+  `playing` varchar(100) NOT NULL,
+  `blurb` varchar(100) NOT NULL,
+  `version` varchar(100) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```
+
+After that, copy and paste src to htdocs, and modify values at /general/loadvls.php
