@@ -1,4 +1,19 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/general/loadvls.php'); ?>
+<?php
+$nosearch = null;
+$GameBase = mysqli_connect($hostdb, $accdb, $passdb, $namedb) or header('Location: ' . $baseUrl . '/err.php?err=500');
+if (isset($_POST['gamesearch'])){
+   $gamesch = mysqli_real_escape_string($GameBase, strip_tags($_POST['search']));
+   htmlspecialchars($gamesch);
+
+   if (empty($gamesch)) {
+      //if no search is NULL, then all of this is ignored.
+      $nosearch = null;
+   }else{
+      $nosearch = "1";
+   }
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <body class="finobe-light">
@@ -11,12 +26,16 @@
                <h3 class="font-weight-light mb-2" style="float: left;">Places</h3>
                <a href="<?php echo $downloadUrl; ?>" target="_blank" class="btn btn-outline-primary btm-sm mb-2 ml-2 mr-1" style="float: left;"><i class="far align-middle fa-fw fa-download mr-1"></i>download client</a>
             </div>
-            <form name="frmSearch" method="post" action="places.php">
+            <form method="POST" action="places.php">
                <center>
                   <div id="SearchBar" class="SearchBar">
                      <div class="input-group">
-                        <input name="search" type="text" placeholder="Search" class="form-control text-white"> 
-                        <div class="input-group-append"><button type="submit" class="btn btn-outline-secondary btn-md"><i aria-hidden="true" class="fas far fa-search"></i></button></div>
+                        <input name="search" id="search" type="text" placeholder="Search" class="form-control"> 
+                        <div class="input-group-append">
+                           <button type="submit" id="gamesearch" name="gamesearch" class="btn btn-outline-secondary btn-md">
+                              <i aria-hidden="true" class="fas far fa-search"></i>
+                           </button>
+                        </div>
                      </div>
                   </div>
                </center>
@@ -36,10 +55,12 @@
             <div class="container-fluid content-row d-none d-lg-block">
                <div class="row">
                   <?php 
-                  //i wanted to reuse generaldb from options.php, but it only works on mac if i do that
-                  //windows freaks out if i do use generaldb from options.php
-                  $GamesDB = mysqli_connect($hostdb, $accdb, $passdb, $namedb);
-                  $GameFetch = mysqli_query($GamesDB, "SELECT * FROM games");
+                  if ($nosearch == "1") {
+                     $GameFetch = mysqli_query($GameBase, "SELECT * FROM games WHERE title LIKE '%". $gamesch ."%'");
+                  }else{
+                     $GameFetch = mysqli_query($GameBase, "SELECT * FROM games");
+                  }
+                  
                   $FoundRows = mysqli_num_rows($GameFetch);
                   if ($FoundRows > 0) {
                         while($Game = $GameFetch->fetch_assoc()) {
@@ -62,7 +83,7 @@
                   } else {
                       echo "<p align='center'>There are no games! 这真是令人难以置信的悲哀。</p>";
                   }
-                  $GamesDB->close();
+                  $GameBase->close();
                   ?>
                </div>
             </div>
