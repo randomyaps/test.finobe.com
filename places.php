@@ -9,9 +9,9 @@
             <div class="container">
             <div>
                <h3 class="font-weight-light mb-2" style="float: left;">Places</h3>
-               <a href="$downloadUrl" target="_blank" class="btn btn-outline-primary btm-sm mb-2 ml-2 mr-1" style="float: left;"><i class="far align-middle fa-fw fa-download mr-1"></i>download client</a>
+               <a href="<?php echo $downloadUrl; ?>" target="_blank" class="btn btn-outline-primary btm-sm mb-2 ml-2 mr-1" style="float: left;"><i class="far align-middle fa-fw fa-download mr-1"></i>download client</a>
             </div>
-            <form name="frmSearch" method="post" action="games.php">
+            <form name="frmSearch" method="post" action="places.php">
                <center>
                   <div id="SearchBar" class="SearchBar">
                      <div class="input-group">
