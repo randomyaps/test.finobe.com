@@ -1,4 +1,4 @@
-# sitetest1.finobe.com - ktrain102's
+# sitetest1.finobe.com
 Hi there, this is a finobe.com rewrite.
 This is currently a W.I.P (Work In Progress) so things might not work, or might be missing.
 # How to set up:
