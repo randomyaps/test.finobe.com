@@ -68,7 +68,7 @@ if ($FinobeToken !== null){
 					  Messages																	</a> <a href='". $baseUrl ."/app/friends.php' class='dropdown-item'>Friends</a>
 				   </div>
 				</li>
-				<li data-animation='false' data-toggle='tooltip' data-placement='bottom' title='' class='nav-item nav-link n-money-text' data-original-title='". $dius ." Dius'><a><img src='imgs/diu_16.png' alt='Dius' title='Dius' class='img-responsive align-middle' width='20' height='20'> ". $dius ."</a></li>
+				<li data-animation='false' data-toggle='tooltip' data-placement='bottom' title='' class='nav-item nav-link n-money-text' data-original-title='". $dius ." Dius'><a><img src='". $baseUrl ."/imgs/diu_16.png' alt='Dius' title='Dius' class='img-responsive align-middle' width='20' height='20'> ". $dius ."</a></li>
 				<li class='nav-item dropdown'>
 				   <a href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' class='nav-link dropdown-toggle'><i aria-hidden='true' class='far align-middle fa-user mr-1'></i> ". $username ." <span class='caret'></span></a> 
 				   <div class='navbar-nobelium-dropdown dropdown-menu dropdown-menu-right'><a href='". $baseUrl ."/create.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-plus align-middle mr-1'></i> Create</a> <a href='". $baseUrl ."/character.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-user align-middle mr-1'></i> Character</a> <a href='". $baseUrl ."/app/settings.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-wrench align-middle mr-1'></i> Settings</a> <a href='". $baseUrl ."/app/logout.php' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-sign-out-alt align-middle mr-1'></i> Logout</a></div>
