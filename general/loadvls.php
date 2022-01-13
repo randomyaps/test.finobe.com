@@ -3,6 +3,7 @@
 //modify baseurl http to https.
 $baseUrl = "http://". $_SERVER['SERVER_NAME'] ."";
 $ProjectName = "Finobe";
+$downloadUrl = "". $baseUrl ."/downloadexample";
 //THE NEXT FOLLOWING VARIABLES ARE EXAMPLES
 //I DO NOT CONDONE ANY ACTS DONE BY THE FOLLOWING TWITTER ACCOUNT OR DISCORD SERVER.
 //disclaimer was added because a tester found out that yourmom redirects to a 18+ server
