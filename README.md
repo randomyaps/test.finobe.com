@@ -31,7 +31,7 @@ CREATE TABLE `games` (
   `by` varchar(100) NOT NULL,
   `playing` varchar(100) NOT NULL,
   `blurb` varchar(100) NOT NULL,
-  `version` varchar(100) NOT NULL,
+  `version` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
