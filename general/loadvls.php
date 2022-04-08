@@ -1,4 +1,3 @@
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/general/loadvls.php'); ?>
 <?php
 //incase of any errors regarding HTTP access,
 //modify baseurl http to https.
