@@ -1,6 +1,10 @@
 # sitetest1.finobe.com
 Hi there, this is a finobe.com rewrite.
 This is currently a W.I.P (Work In Progress) so things might not work, or might be missing.
+# NOTICE
+This is a very outdated version of this project, and i have learned how to do so many more things in PHP now.
+I do NOT recommend or endorse anyone to ever, EVER use this for any actual project.
+This code contains various vulns, uses outdated methods and probably is prone to SQL injecting.
 # How to set up:
 First create a database in MySQL, called finobe.
 
