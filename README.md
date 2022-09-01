@@ -36,3 +36,6 @@ CREATE TABLE `users` (
   `token` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
+once you did that
+go to general\loadingValues\generalConfigs.php
+and then modify the configurations to match your stuff
