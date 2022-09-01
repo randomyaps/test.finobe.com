@@ -1,42 +1,38 @@
-# sitetest1.finobe.com
-Hi there, this is a finobe.com rewrite.
-This is currently a W.I.P (Work In Progress) so things might not work, or might be missing.
-# NOTICE
-This is a very outdated version of this project, and i have learned how to do so many more things in PHP now.
-I do NOT recommend or endorse anyone to ever, EVER use this for any actual project.
-This code contains various vulns, uses outdated methods and probably is prone to SQL injecting.
+# test.finobe.com (new update)
+this is a finobe.com rewrite in php
+it is missing hundreds of pages
+it has been rewritten to use safer and more newer php functions
+it also jquery for the games page and pretty much works better than the old version
 # How to set up:
-First create a database in MySQL, called finobe.
-
-Then click on the finobe database, and then on the tab 'SQL'.
-
-Then copy and paste the following code:
+create a database in sql called finobe
+run the following code on SQL tab:
 ```
+CREATE TABLE `assets` (
+  `id` int(11) NOT NULL,
+  `title` longtext NOT NULL,
+  `info` longtext NOT NULL,
+  `creatorname` longtext NOT NULL,
+  `creatorid` varchar(100) NOT NULL,
+  `playing` varchar(100) NOT NULL,
+  `maxplayer` varchar(100) NOT NULL,
+  `favorited` varchar(100) NOT NULL,
+  `version` varchar(100) NOT NULL,
+  `createdon` longtext NOT NULL,
+  `assetype` varchar(100) NOT NULL,
+  `genre` longtext NOT NULL,
+  `approved` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `username` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `role` varchar(100) NULL,
+  `rank` varchar(100) NOT NULL,
+  `message` longtext DEFAULT NULL,
   `dius` varchar(100) NOT NULL,
   `blurb` varchar(100) NOT NULL,
   `date` varchar(100) NOT NULL,
-  `banned` varchar(100) NULL,
-  `warn` varchar(100) NULL,
-  `bannedreason` varchar(100) NULL,
-  `finobetoken` varchar(100) NOT NULL
+  `token` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
-click on Go, and then do the same for the code below:
-```
-CREATE TABLE `games` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `title` varchar(100) NOT NULL,
-  `by` varchar(100) NOT NULL,
-  `playing` varchar(100) NOT NULL,
-  `blurb` varchar(100) NOT NULL,
-  `version` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-```
-
-After that, copy and paste src to htdocs, and modify values at /general/loadvls.php
