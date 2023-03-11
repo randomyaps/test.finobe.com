@@ -49,7 +49,7 @@ switch(true){
 				</li>
 				<li data-animation='false' data-toggle='tooltip' data-placement='bottom' title='' class='nav-item nav-link n-money-text' data-original-title='". $userDius ." " . $CurrencyName . "'><a><img src='" . $CurrencyIcon . "' alt='" . $CurrencyName . "' title='" . $CurrencyName . "' class='img-responsive align-middle' width='20' height='20'> ". $userDius ."</a></li>
 				<li class='nav-item dropdown'>
-				   <a href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' class='nav-link dropdown-toggle'><i aria-hidden='true' class='far align-middle fa-user mr-1'></i> ". $userName ." <span class='caret'></span></a> 
+				   <a href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' class='nav-link dropdown-toggle'><i aria-hidden='true' class='far align-middle fa-user mr-1'></i> ". htmlspecialchars($userName) ." <span class='caret'></span></a> 
 				   <div class='navbar-nobelium-dropdown dropdown-menu dropdown-menu-right'><a href='". $baseUrl ."/create' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-plus align-middle mr-1'></i> Create</a> <a href='". $baseUrl ."/character' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-user align-middle mr-1'></i> Character</a> <a href='". $baseUrl ."/app/settings' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-wrench align-middle mr-1'></i> Settings</a> <a href='". $baseUrl ."/app/logout' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-sign-out-alt align-middle mr-1'></i> Logout</a></div>
 				</li>
 			 </ul>
