@@ -15,8 +15,8 @@ switch (true){
 			<!--<span class='badge badge-success badge-notification'>Online</span></div>-->
 			</span>
 			<span class='data py-2 px-2 d-flex flex-column'>
-			<span class='catalog-no-overflow-plz' style='font-size: 15px;'>". $gameInfo['title'] ."</span>
-			<span class='author text-muted' style='font-size: 13px;'>by ". $gameInfo['creatorname'] ."</span>
+			<span class='catalog-no-overflow-plz' style='font-size: 15px;'>". htmlspecialchars($gameInfo['title']) ."</span>
+			<span class='author text-muted' style='font-size: 13px;'>by ". htmlspecialchars($gameInfo['creatorname']) ."</span>
 			<span class='catalog-no-overflow-plz text-muted'>". $gameInfo['playing'] ." playing</span> 
 			</span>
 			</div>
