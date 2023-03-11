@@ -449,11 +449,11 @@ $gameResults = fetchAsset($gameId, "place");
                      <div class="col-lg-7 my-2 text-center"><img src="<?php echo $baseUrl; ?>/app/gethumb.php?id=<?php echo $gameResults["id"]; ?>&asset=game" alt="" class="place-thumbnail"></div>
                      <div class="col-lg-5 my-2">
                         <h3 class="mb-0">
-                           <?php echo $gameResults["title"]; ?>
+                           <?php echo htmlspecialchars($gameResults["title"]); ?>
                         </h3>
-                        <p class="my-0">by <a href="<?php echo $baseUrl; ?>/user?id=<?php echo $gameResults["creatorid"]; ?>"><?php echo $gameResults["creatorname"]; ?></a></p>
+                        <p class="my-0">by <a href="<?php echo $baseUrl; ?>/user?id=<?php echo $gameResults["creatorid"]; ?>"><?php echo htmlspecialchars($gameResults["creatorname"]); ?></a></p>
                         <p class="mt-0 mb-2"><span class="badge badge-danger"><?php echo $gameResults["version"]; ?></span></p>
-                        <p class="place-description"><?php echo $gameResults["info"]; ?></p>
+                        <p class="place-description"><?php echo htmlspecialchars($gameResults["info"]); ?></p>
                         <div data-v-152bd39d="" class="w-100">
                            <div data-v-152bd39d="">
                               <a data-v-152bd39d="" href="#" class="btn btn-success btn-lg btn-play btn-block btn-normal-case"><i data-v-152bd39d="" class="far fa-play fa-fw mr-1"></i>
