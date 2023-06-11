@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/userInfo.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/general/extraFunctions.php');
-$gameId = (int)($_GET['id'] ?? die(header('Location: '. $baseUrl .'/err?err=404')));
+$gameId = (int)($_GET['id'] ?? die(header('Location: '. $errorPages[0])));
 $gameResults = fetchAsset($gameId, "place");
 ?>
 <!DOCTYPE HTML>
