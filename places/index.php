@@ -11,7 +11,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php')
       <br></br>
             <div class="container">
             <div>
-               <h3 class="font-weight-light mb-2" style="float: left;">Places</h3>
+               <h3 class="font-weight-light mb-2" style="float: left;">Games</h3>
                <a href="<?php echo $downloadUrl; ?>" target="_blank" class="btn btn-outline-primary btm-sm mb-2 ml-2 mr-1" style="float: left;"><i class="far align-middle fa-fw fa-download mr-1"></i>download client</a>
             </div>
             <form method="POST" action="<?php echo $CurrPage; ?>">
@@ -20,7 +20,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php')
                      <div class="input-group">
                         <input name="search" id="search" type="text" placeholder="Search" class="form-control"> 
                         <div class="input-group-append">
-                           <button type="submit" id="gamesearch" name="gamesearch" class="btn btn-outline-secondary btn-md">
+                           <button type="submit" id="gamesearch" name="gamesearch" class="btn btn-secondary btn-md">
                               <i aria-hidden="true" class="fas far fa-search"></i>
                            </button>
                         </div>
