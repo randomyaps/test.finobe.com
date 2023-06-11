@@ -5,7 +5,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/extraFunctions.php');
 $userId = ($_GET['id'] ?? die(header('Location: '. $errorPages[0])));
 $userData = fetchUser($userId);
 if(!$userData){die(header('Location: '. $errorPages[0]));}
-$userBlurb = str_replace("[dius]", '<img src="/imgs/diu_16.png" alt="Dius" title="Dius" class="img-responsive align-middle" width="16" height="16">' . $userData["dius"], $userData["blurb"]);
+$userBlurb = str_replace("[dius]", '<img src="/imgs/diu_16.png" alt="Dius" title="Dius" class="img-responsive align-middle" width="16" height="16">' . $userData["dius"], htmlspecialchars($userData["blurb"]));
 ?>
 <!DOCTYPE HTML>
 <html>
