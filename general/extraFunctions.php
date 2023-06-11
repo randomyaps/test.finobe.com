@@ -32,6 +32,19 @@
 		return $fetchResults[0];
 	}
 
+	function fetchUser($id){
+		include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php');
+		$Sanitized = (int)($id ?? 0);
+		$fetchInfo = $generaldb->prepare("SELECT * FROM users WHERE id = :id");
+		$fetchInfo->execute([':id' => $Sanitized]);
+		$fetchResults = $fetchInfo->fetchAll();
+		if (!$fetchResults){
+			return array();
+		}else{
+			return $fetchResults[0];
+		}
+	}
+
 	function random_tkn(
 		int $length = 64,
 		string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
