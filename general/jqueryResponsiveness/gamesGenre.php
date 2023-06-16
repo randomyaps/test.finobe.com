@@ -7,6 +7,7 @@ $gamesFetched = fetchGames($gameGet);
 switch (true){
 	case ($gamesFetched):
 		foreach($gamesFetched as $gameInfo){
+			$userInfo = fetchUser($gameInfo['creatorid']);
 			echo "<div class='col-lg-2 mb-4' onclick='goPlace(". $gameInfo["id"] .")'>
 			<div class='game-card h-100 video-card'>
 			<span class='thumbnail'>
@@ -16,7 +17,7 @@ switch (true){
 			</span>
 			<span class='data py-2 px-2 d-flex flex-column'>
 			<span class='catalog-no-overflow-plz' style='font-size: 15px;'>". htmlspecialchars($gameInfo['title']) ."</span>
-			<span class='author text-muted' style='font-size: 13px;'>by ". htmlspecialchars($gameInfo['creatorname']) ."</span>
+			<span class='author text-muted' style='font-size: 13px;'>by ". htmlspecialchars($userInfo['name']) ."</span>
 			<span class='catalog-no-overflow-plz text-muted'>". $gameInfo['playing'] ." playing</span> 
 			</span>
 			</div>
