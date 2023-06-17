@@ -23,7 +23,6 @@
 				$totalPages = ceil($totalRows / $perPage);
 				break;
 		}
-		$fetchResults = $fetchInfo->fetchAll();
 		$fetchResults = [
 			"totalData" => $fetchInfo->fetchAll(),
 			"totalRows" => $totalRows,
