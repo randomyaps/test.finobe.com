@@ -14,7 +14,6 @@ CREATE TABLE `assets` (
   `id` int(11) NOT NULL,
   `title` longtext NOT NULL,
   `info` longtext NOT NULL,
-  `creatorname` longtext NOT NULL,
   `creatorid` varchar(100) NOT NULL,
   `playing` varchar(100) NOT NULL,
   `maxplayer` varchar(100) NOT NULL,
