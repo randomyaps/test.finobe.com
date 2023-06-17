@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/app/appscripting/ServerHandling.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/userInfo.php');
-switch(true){ case($FinobeToken):die(header('Location: '. $baseUrl));break;}
+switch(true){case($FinobeToken):die(header('Location: '. $baseUrl));break;}
 ?>
 <!DOCTYPE HTML>
 <html>
