@@ -3,7 +3,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php')
 ?>
 <!DOCTYPE HTML>
 <html>
-<body class="finobe-light" onload="fetchPlaceList('All')">
+<body class="finobe-light" onload="finobeApp.Games.fetchPlaceList('All')">
    <?php include($_SERVER['DOCUMENT_ROOT'] . '/general/top.php');?>
    <script src="<?php echo $baseUrl; ?>/general/js/responsivefrontend.js" type="text/javascript"></script>
    <div id="app">
