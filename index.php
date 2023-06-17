@@ -46,7 +46,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/userInfo.php');
 <?php 
 switch(true){
 	case ($FinobeToken):
-		echo "<div class='container d-flex justify-content-center'><h1 class='mb-4 home-text'>Hi there, ". htmlspecialchars($userName) ."</h1><p><a href='". $baseUrl ."/places' class='btn btn-success btn-lg mt-3 mr-2'>join a game ></a></p></div>";
+		echo "<div class='container d-flex justify-content-center'><h1 class='mb-4 home-text'>Hi there, ". htmlspecialchars($loggedIn->userName) ."</h1><p><a href='". $baseUrl ."/places' class='btn btn-success btn-lg mt-3 mr-2'>join a game ></a></p></div>";
 		break;
 	default:
 		echo "<div class='container d-flex justify-content-center'><h1 class='mb-4 home-text'>We do what ". $ProjectName ." does</h1><p class='home-text'>". $ProjectName ." puts games on your not-phone.</p><p><a href='". $baseUrl ."/app/register' class='btn btn-primary btn-lg mt-3 mr-2'>Get started &rsaquo;</a></p></div>";
