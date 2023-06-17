@@ -1,8 +1,11 @@
-# test.finobe.com (new update)
-this is a finobe.com rewrite in php
-it is missing hundreds of pages
-it has been rewritten to use safer and more newer php functions
-it also jquery for the games page and pretty much works better than the old version
+# test.finobe.com
+This is a finobe.com recreation in php,
+it is missing lots of html pages, if you have any,
+please give it to us and we will credit you as well
+as add it to the project.
+# Kind Donators of HTMLs
+- 0k
+- era
 # How to set up:
 create a database in sql called finobe
 run the following code on SQL tab:
@@ -37,5 +40,5 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 once you did that
-go to general\loadingValues\generalConfigs.php
+go to ```general\loadingValues\generalConfigs.php```
 and then modify the configurations to match your stuff
