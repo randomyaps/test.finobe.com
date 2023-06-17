@@ -1,7 +1,6 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php'); 
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/userInfo.php');
-session_destroy();
 switch(true){
 	case ($FinobeToken):
 		setcookie('FinobesiToken', null, -1, '/', $_SERVER['SERVER_NAME']); 
