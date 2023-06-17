@@ -54,7 +54,7 @@ if($userData['rank'] == "admin"){$userRank = '<strong class="text-danger">Admin<
 		  <div class="card mb-4">
 			 <div class="card-body">
 				<div class="row">
-				   <div class="col-md-4"><img src="philosophy%20-%20Squared_files/1.htm" class="img-fluid my-2" style="display: block; max-height: 325px; max-width: 325px; margin: 0px auto;"></div>
+				   <div class="col-md-4"><img src="/app/gethumb?id=<?php echo $userId; ?>&asset=user" class="img-fluid my-2" style="display: block; max-height: 325px; max-width: 325px; margin: 0px auto;"></div>
 				   <div class="col-md-8">
 					  <div class="row">
 						 <div class="col-md-6">
