@@ -4,7 +4,7 @@ $ProjectName = "Finobe";
 $downloadUrl = $baseUrl ."/downloadexample";
 $CurrencyName = "Dius";
 $CurrencyIcon = "" . $baseUrl . "/imgs/diu_16.png";
-$allowedGameGenres = array('All', 'Featured', 'Original', 'Copies');
+$allowedGameGenres = array('Featured', 'Original', 'Copies');
 $errorPages = array($baseUrl . '/err?err=404', $baseUrl . '/err?err=500', $baseUrl . '/err?err=401');
 $CurrPage = $_SERVER["REQUEST_URI"];
 
