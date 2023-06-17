@@ -1,24 +1,18 @@
 <?php
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/userInfo.php');
-
-switch($userRank){
-	case "admin":
-		$extraBtn = "<li class='nav-item'><a href='". $baseUrl ."/admin' class='nav-link'>Admin Panel</a></li>";
-		break;
-	default:
-		$extraBtn = null;
-		break;
-}
-
+$extraBtn = null;
 switch(true){
 	case ($FinobeToken):
+		if($loggedIn->userRank == "admin"){
+			$extraBtn = "<li class='nav-item'><a href='". $baseUrl ."/admin' class='nav-link'>Admin Panel</a></li>";
+		}
 		echo "<nav class='navbar navbar-expand-lg navbar-light  bg-faded navbar-static-top'>
 	   <div class='container'>
 		  <a href='". $baseUrl ."/' class='navbar-brand'><img src='". $baseUrl ."/imgs/finobesvg.svg' alt='". $ProjectName ."' class='navbar-brandimg d-inline-block mr-2' style='width: auto;'>". $ProjectName ."</a> <button type='button' data-toggle='collapse' data-target='#navbar-collapse' aria-controls='navbar-collapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler navbar-toggler-right'><span class='navbar-toggler-icon'></span></button> 
 		  <div id='navbar-collapse' class='collapse navbar-collapse'>
 			 <ul class='nav navbar-nav mr-auto'>
-				<li class='nav-item'><a href='". $baseUrl ."/user?id=". $userId ."' class='nav-link'>Profile</a></li>
+				<li class='nav-item'><a href='". $baseUrl ."/user?id=". $loggedIn->userId ."' class='nav-link'>Profile</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/places' class='nav-link'>Games</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/catalog' class='nav-link'>Catalog</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/forum' class='nav-link'>Forum</a></li>
@@ -47,9 +41,9 @@ switch(true){
 					  Messages																	</a> <a href='". $baseUrl ."/app/friends' class='dropdown-item'>Friends</a>
 				   </div>
 				</li>
-				<li data-animation='false' data-toggle='tooltip' data-placement='bottom' title='' class='nav-item nav-link n-money-text' data-original-title='". $userDius ." " . $CurrencyName . "'><a><img src='" . $CurrencyIcon . "' alt='" . $CurrencyName . "' title='" . $CurrencyName . "' class='img-responsive align-middle' width='20' height='20'> ". $userDius ."</a></li>
+				<li data-animation='false' data-toggle='tooltip' data-placement='bottom' title='' class='nav-item nav-link n-money-text' data-original-title='". $loggedIn->userDius ." " . $CurrencyName . "'><a><img src='" . $CurrencyIcon . "' alt='" . $CurrencyName . "' title='" . $CurrencyName . "' class='img-responsive align-middle' width='20' height='20'> ". $loggedIn->userDius ."</a></li>
 				<li class='nav-item dropdown'>
-				   <a href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' class='nav-link dropdown-toggle'><i aria-hidden='true' class='far align-middle fa-user mr-1'></i> ". htmlspecialchars($userName) ." <span class='caret'></span></a> 
+				   <a href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' class='nav-link dropdown-toggle'><i aria-hidden='true' class='far align-middle fa-user mr-1'></i> ". htmlspecialchars($loggedIn->userName) ." <span class='caret'></span></a> 
 				   <div class='navbar-nobelium-dropdown dropdown-menu dropdown-menu-right'><a href='". $baseUrl ."/create' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-plus align-middle mr-1'></i> Create</a> <a href='". $baseUrl ."/character' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-user align-middle mr-1'></i> Character</a> <a href='". $baseUrl ."/app/settings' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-wrench align-middle mr-1'></i> Settings</a> <a href='". $baseUrl ."/app/logout' class='dropdown-item'><i aria-hidden='true' class='fas fa-fw fa-sign-out-alt align-middle mr-1'></i> Logout</a></div>
 				</li>
 			 </ul>
