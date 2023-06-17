@@ -1,3 +1,3 @@
 <?php
-echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/imgs/error.png");
+echo file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/imgs/pending.png");
 ?>
