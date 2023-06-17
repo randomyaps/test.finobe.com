@@ -4,8 +4,8 @@ RewriteRule ^ /%1 [NC,L,R]
  
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
-
 RewriteRule ^user/([0-9]+) profile.php?id=$1 [L,QSA]
+RewriteRule ^app/user/image/([0-9]+) app/user/returnimg.php?id=$1 [L,QSA]
 
 ErrorDocument 404 /err.php?err=404
 ErrorDocument 500 /err.php?err=500
