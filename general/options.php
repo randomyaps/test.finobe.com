@@ -12,11 +12,10 @@ switch(true){
 		  <a href='". $baseUrl ."/' class='navbar-brand'><img src='". $baseUrl ."/imgs/finobesvg.svg' alt='". $ProjectName ."' class='navbar-brandimg d-inline-block mr-2' style='width: auto;'>". $ProjectName ."</a> <button type='button' data-toggle='collapse' data-target='#navbar-collapse' aria-controls='navbar-collapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler navbar-toggler-right'><span class='navbar-toggler-icon'></span></button> 
 		  <div id='navbar-collapse' class='collapse navbar-collapse'>
 			 <ul class='nav navbar-nav mr-auto'>
-				<li class='nav-item'><a href='". $baseUrl ."/user?id=". $loggedIn->userId ."' class='nav-link'>Profile</a></li>
+				<li class='nav-item'><a href='". $baseUrl ."/user/". $loggedIn->userId ."' class='nav-link'>Profile</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/places' class='nav-link'>Games</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/catalog' class='nav-link'>Catalog</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/forum' class='nav-link'>Forum</a></li>
-				<li class='nav-item'><a href='". $baseUrl ."/groups' class='nav-link'>Groups</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/users' class='nav-link'>Users</a></li>
 				<li class='nav-item'><a href='". $baseUrl ."/blog' class='nav-link'>Blog</a></li>
 				". $extraBtn ."
