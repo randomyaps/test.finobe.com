@@ -12,7 +12,7 @@ switch (true){
 	case ($gamesFetched):
 		foreach($gamesFetched as $gameInfo){
 			$userInfo = fetchUser($gameInfo['creatorid']);
-			echo "<div class='col-lg-2 mb-4' onclick='goPlace(". $gameInfo["id"] .")'>
+			echo "<div class='col-lg-2 mb-4' onclick='finobeApp.Games.goPlace(". $gameInfo["id"] .")'>
 			<div class='game-card h-100 video-card'>
 			<span class='thumbnail'>
 			<img src='". $baseUrl ."/app/gethumb.php?id=". $gameInfo['id'] ."&asset=game'  class='card-img-top'>
