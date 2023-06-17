@@ -5,7 +5,6 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/extraFunctions.php');
 if (isset($_COOKIE['FinobesiToken'])) {
 	die(header('Location: '. $errorPages[0]));
 }
-session_start();
 $errors = array();
 $date = date("Y-m-d");
 
