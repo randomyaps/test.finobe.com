@@ -4,6 +4,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/userInfo.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/general/extraFunctions.php');
 $gameId = (int)($_GET['id'] ?? die(header('Location: '. $errorPages[0])));
 $gameResults = fetchAsset($gameId, "place");
+$creatorInfo = fetchUser($gameResults['creatorid']);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -451,7 +452,7 @@ $gameResults = fetchAsset($gameId, "place");
                         <h3 class="mb-0">
                            <?php echo htmlspecialchars($gameResults["title"]); ?>
                         </h3>
-                        <p class="my-0">by <a href="<?php echo $baseUrl; ?>/user?id=<?php echo $gameResults["creatorid"]; ?>"><?php echo htmlspecialchars($gameResults["creatorname"]); ?></a></p>
+                        <p class="my-0">by <a href="<?php echo $baseUrl; ?>/user/<?php echo $gameResults["creatorid"]; ?>"><?php echo htmlspecialchars($creatorInfo["name"]); ?></a></p>
                         <p class="mt-0 mb-2"><span class="badge badge-danger"><?php echo $gameResults["version"]; ?></span></p>
                         <p class="place-description"><?php echo htmlspecialchars($gameResults["info"]); ?></p>
                         <div data-v-152bd39d="" class="w-100">

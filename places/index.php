@@ -31,10 +31,10 @@ include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php')
             <div class="mb-2"></div>
             <div class="text-center form-inline">
                <ul class="pagination">
-                  <li class="page-item"><a href="#" onclick="fetchPlaceList('Featured')" class="page-link">Featured</a></li>
-                  <li class="page-item"><a href="#" onclick="fetchPlaceList('Original')" class="page-link">Original</a></li>
-                  <li class="page-item"><a href="#" onclick="fetchPlaceList('Copies')" class="page-link">Copies</a></li>
-                  <li class="page-item"><a href="#" onclick="fetchPlaceList('All')" class="page-link">All</a></li>
+                  <li class="page-item"><a href="#" onclick="finobeApp.Games.fetchPlaceList('Featured')" class="page-link">Featured</a></li>
+                  <li class="page-item"><a href="#" onclick="finobeApp.Games.fetchPlaceList('Original')" class="page-link">Original</a></li>
+                  <li class="page-item"><a href="#" onclick="finobeApp.Games.fetchPlaceList('Copies')" class="page-link">Copies</a></li>
+                  <li class="page-item"><a href="#" onclick="finobeApp.Games.fetchPlaceList('All')" class="page-link">All</a></li>
                </ul>
             </div>
             <div class="mb-2"></div>
