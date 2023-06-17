@@ -1,6 +1,10 @@
 <?php 
 include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php'); 
+include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalObjects.php'); 
 include($_SERVER['DOCUMENT_ROOT'] . '/general/extraFunctions.php');
+if (isset($_COOKIE['FinobesiToken'])) {
+	die(header('Location: '. $errorPages[0]));
+}
 session_start();
 $errors = array();
 $date = date("Y-m-d");
@@ -86,8 +90,8 @@ switch(true){
 		
 		switch(true){
 			case (count($errors) == 0):
-				$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
-				$InsertToDB = $generaldb->prepare("INSERT INTO users (name, email, password, rank, message, dius, blurb, date, token) VALUES(?,?,?,'user',NULL,'10','new to finoob.',?,?)")->execute([$username, $email, $hashedpassword, $date, $token]);
+				$newUser = new User;
+				$newUser->createnew($username, $email, $password, $token);
 				setcookie("FinobesiToken", $token, time()+9900, "/", $_SERVER['SERVER_NAME']);
 				header("Location: ". $baseUrl);
 				die();
