@@ -26,7 +26,7 @@ CREATE TABLE `assets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -35,8 +35,9 @@ CREATE TABLE `users` (
   `dius` varchar(100) NOT NULL,
   `blurb` varchar(100) NOT NULL,
   `date` varchar(100) NOT NULL,
-  `token` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `token` varchar(100) NOT NULL,
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 ```
 once you did that
 go to ```general\loadingValues\generalConfigs.php```
