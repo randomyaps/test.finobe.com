@@ -1,5 +1,6 @@
 <?php
-
+	//Note: turn assets into a obj and put it on generalObjects.php
+	//change up fetchGames and fetchAsset
 	function fetchGames($Genre="All",int $pageNum=0,int $perPage=10){
 		include($_SERVER['DOCUMENT_ROOT'] . '/general/loadingValues/generalConfigs.php');
 		$generaldb->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
